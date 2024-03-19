@@ -25,6 +25,23 @@ const Chartss = () => {
       data: data
     }],
     options: {
+      yaxis : {
+        stepSize : 10000
+      },
+      grid: {
+        show: true,
+        strokeDashArray: 5,
+        yaxis: {
+          lines: {
+            show: true,
+          },
+        },
+        xaxis: {
+          lines: {
+            show: false,
+          },
+        },
+      },
       chart: {
         height: 250,
         type: 'bar',
@@ -36,8 +53,9 @@ const Chartss = () => {
         plotOptions: {
           bar: {
             columnWidth: '75%',
-            borderRadius : 17,
-            borderRadiusApplication : "end"
+            borderRadius : 10,
+            borderRadiusApplication : "end",
+
           }
         },
         dataLabels: {
@@ -58,7 +76,51 @@ const Chartss = () => {
       },
   }
   return (
-    <ReactApexChart options={options.options} series={options.series} type="bar" height={350}/>
+    <div className='p-4'>
+      <div className="flex items-center justify-between text-sm">
+        <h1 className='font-semibold'>Sales Trends</h1>
+        <div className='flex items-center space-x-3'>
+          <span>
+            Sort by : 
+          </span>
+          <div className="">
+
+          </div>
+        </div>
+      </div>
+      <ReactApexChart 
+      options={
+        {
+          ...options.options,
+          fill: {
+            type: "gradient",
+            gradient: {
+              type: "vertical",
+              shadeIntensity: 1,
+              opacityFrom: 0.2,
+              opacityTo: 1,
+              colorStops: [
+                [
+                  {
+                    offset: 0,
+                    color: "#34CAA5",
+                    opacity: 1,
+                  },
+                  {
+                    offset: 100,
+                    color: "#ddf7f0",
+                    opacity: 1,
+                  },
+                ],
+              ],
+            },
+          },
+        }
+      } 
+      series={options.series} 
+      type="bar" height={270}
+      />
+    </div>
   );
 }
 

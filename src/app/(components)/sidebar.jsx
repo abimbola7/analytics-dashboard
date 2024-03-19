@@ -2,11 +2,11 @@
 
 import React from 'react'
 
-const SideBar = () => {
+const SideBar = ({ className }) => {
   const [ theme, setTheme ] = React.useState('light')
   console.log(theme)
   return (
-    <div className=' w-16 flex flex-col justify-between h-[95vh] bg-[#F7F8FA] py-2'>
+    <div className={`w-16 flex-col justify-between h-[95vh] bg-[#F7F8FA] py-2 ${ className }`}>
       <div className='justify-items-center flex flex-col items-center'>
         <div className="py-3">
           <img src='images/Vector.png' className='w-7 cursor-pointer'/>
