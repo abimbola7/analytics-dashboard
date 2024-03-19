@@ -12,6 +12,7 @@ import {
 
 
 const Table1 = () => {
+  const [ hide, setHide ] = React.useState(false);
   const orders = [
     { id :1, name : "Marcus Bergson", date : "Nov 15 2023", amount : 80000, status : "Paid"  },
     { id :2, name : "Jaydon Vaccaro", date : "Nov 15 2023", amount : 150000, status : "Refund"  },
@@ -25,31 +26,63 @@ const Table1 = () => {
     { id :10, name : "Benjamin Foster", date : "Nov 11 2023", amount : 4000, status : "Paid"  },
 
   ]
+  console.log(hide)
   return (
-    <Table>
-      <TableHeader>
-        <TableRow>
-          <TableHead className="border w-[300px]">Name</TableHead>
-          <TableHead className="border text-center ">Date</TableHead>
-          <TableHead className="border text-center ">Amount</TableHead>
-          <TableHead className="border text-center ">Status</TableHead>
-          <TableHead className="border text-center ">Invoice</TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-          {
-            orders && orders.slice(0, 5).map(item=>(
-              <TableRow key={item.id}>
-                <TableCell className="font-medium">{item.name}</TableCell>
-                <TableCell className="text-center ">{item.date}</TableCell>
-                <TableCell className="text-center ">{item.amount}</TableCell>
-                <TableCell className={`text-center ${ item.status === "Paid" ? "text-[#34CAA5]" : "text-[#ED544E]" }`}>{item.status}</TableCell>
-                <TableCell className="text-center ">$250.00</TableCell>
-              </TableRow>
-            ))
-          }
-      </TableBody>
-    </Table>
+    <div className=''>
+      <div className="flex items-center justify-between px-2">
+        <h2 className="font-semibold text-md">Last Orders</h2>
+        <button 
+        className='px-2 py-1 text-[#34CAA5] focus:outline-none'
+        onClick={()=>setHide(prev=>!prev)}
+        >
+          { hide ? "Hide" : "See All" }
+        </button>
+      </div>
+      <Table className="border-none">
+        <TableHeader className="">
+          <TableRow className="">
+            <TableHead className="border-none w-[300px]">Name</TableHead>
+            <TableHead className="border-none text-center ">Date</TableHead>
+            <TableHead className="border-none text-center ">Amount</TableHead>
+            <TableHead className="border-none text-center ">Status</TableHead>
+            <TableHead className="border-none text-center ">Invoice</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+            {
+              hide ? (
+                <>
+                  {
+                    orders && orders.map(item=>(
+                      <TableRow key={item.id}>
+                        <TableCell className="font-medium">{item.name}</TableCell>
+                        <TableCell className="text-center ">{item.date}</TableCell>
+                        <TableCell className="text-center ">{item.amount}</TableCell>
+                        <TableCell className={`text-center ${ item.status === "Paid" ? "text-[#34CAA5]" : "text-[#ED544E]" }`}>{item.status}</TableCell>
+                        <TableCell className="text-center ">$250.00</TableCell>
+                      </TableRow>
+                    ))
+                  }
+                </>
+              ) : (
+                <>
+                  {
+                    orders && orders.slice(0, 5).map(item=>(
+                      <TableRow key={item.id}>
+                        <TableCell className="font-medium">{item.name}</TableCell>
+                        <TableCell className="text-center ">{item.date}</TableCell>
+                        <TableCell className="text-center ">{item.amount}</TableCell>
+                        <TableCell className={`text-center ${ item.status === "Paid" ? "text-[#34CAA5]" : "text-[#ED544E]" }`}>{item.status}</TableCell>
+                        <TableCell className="text-center ">$250.00</TableCell>
+                      </TableRow>
+                    ))
+                  }
+                </>
+              )
+            }
+        </TableBody>
+      </Table>
+    </div>
   )
 }
 

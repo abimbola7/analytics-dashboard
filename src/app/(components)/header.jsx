@@ -6,7 +6,7 @@ import User from './user';
 
 const Header = () => {
   return (
-    <header className="w-full flex items-center px-1 bg-[#FAFAFA]">
+    <header className="w-full flex items-center px-1 bg-[#FAFAFA] sticky top-0 z-[50]">
       <nav className="flex items-center justify-between mx-auto py-4 max-w-[97%] w-full">
         <div className="">
           <h1 className="text-xl font-semibold">Dashboard</h1>
