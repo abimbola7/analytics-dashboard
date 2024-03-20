@@ -9,6 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+import DocumentDownload from "../../../public/icons/document-download.svg"
 
 
 const Table1 = () => {
@@ -41,11 +42,11 @@ const Table1 = () => {
       <Table className="border-none">
         <TableHeader className="">
           <TableRow className="">
-            <TableHead className="border-none w-[300px]">Name</TableHead>
-            <TableHead className="border-none text-center ">Date</TableHead>
-            <TableHead className="border-none text-center ">Amount</TableHead>
-            <TableHead className="border-none text-center ">Status</TableHead>
-            <TableHead className="border-none text-center ">Invoice</TableHead>
+            <TableHead className="">Name</TableHead>
+            <TableHead className="border-none  ">Date</TableHead>
+            <TableHead className="border-none  ">Amount</TableHead>
+            <TableHead className="border-none  ">Status</TableHead>
+            <TableHead className="border-none  ">Invoice</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -56,10 +57,13 @@ const Table1 = () => {
                     orders && orders.map(item=>(
                       <TableRow key={item.id}>
                         <TableCell className="font-medium">{item.name}</TableCell>
-                        <TableCell className="text-center ">{item.date}</TableCell>
-                        <TableCell className="text-center ">{item.amount}</TableCell>
-                        <TableCell className={`text-center ${ item.status === "Paid" ? "text-[#34CAA5]" : "text-[#ED544E]" }`}>{item.status}</TableCell>
-                        <TableCell className="text-center ">$250.00</TableCell>
+                        <TableCell className=" ">{item.date}</TableCell>
+                        <TableCell className=" ">{item.amount}</TableCell>
+                        <TableCell className={` ${ item.status === "Paid" ? "text-[#34CAA5]" : "text-[#ED544E]" }`}>{item.status}</TableCell>
+                        <TableCell className="flex items-center cursor-pointer">
+                          <DocumentDownload />
+                          <span className='ml-2'>View</span>
+                        </TableCell>
                       </TableRow>
                     ))
                   }
@@ -70,10 +74,13 @@ const Table1 = () => {
                     orders && orders.slice(0, 5).map(item=>(
                       <TableRow key={item.id}>
                         <TableCell className="font-medium">{item.name}</TableCell>
-                        <TableCell className="text-center ">{item.date}</TableCell>
-                        <TableCell className="text-center ">{item.amount}</TableCell>
-                        <TableCell className={`text-center ${ item.status === "Paid" ? "text-[#34CAA5]" : "text-[#ED544E]" }`}>{item.status}</TableCell>
-                        <TableCell className="text-center ">$250.00</TableCell>
+                        <TableCell className=" ">{item.date}</TableCell>
+                        <TableCell className=" ">${item.amount}</TableCell>
+                        <TableCell className={` ${ item.status === "Paid" ? "text-[#34CAA5]" : "text-[#ED544E]" }`}>{item.status}</TableCell>
+                        <TableCell className="flex items-center cursor-pointer">
+                          <DocumentDownload />
+                          <span className='ml-2'>View</span>
+                        </TableCell>
                       </TableRow>
                     ))
                   }
