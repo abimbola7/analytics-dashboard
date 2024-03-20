@@ -4,6 +4,9 @@ import Calendar from './calendar'
 import { HiOutlineBell } from "react-icons/hi2";
 import User from './user';
 import { inter } from '../fonts';
+import { CgMenuRight } from "react-icons/cg";
+import { CiSearch, CiMenuBurger } from "react-icons/ci";
+import { Hamburger } from './hamburger';
 
 const Header = () => {
   return (
@@ -13,12 +16,21 @@ const Header = () => {
           <h1 className="text-xl font-semibold">Dashboard</h1>
         </div>
         <div className="flex items-center space-x-4">
-          <Searchbar />
-          <Calendar />
+          <Searchbar className="hidden lg:block"/>
+          <div className="lg:hidden p-1 border rounded-full cursor-pointer">
+            <CiSearch size={20}/>
+          </div>
+          <Calendar/>
           <div className="rounded-full p-1 border cursor-pointer">
             <HiOutlineBell size={20} className=""/>
           </div>
           <User />
+          <div className="md:hidden">
+            <Hamburger />
+          </div>
+          {/* <div className='md:hidden'>
+            <CgMenuRight size={20}/>
+          </div> */}
         </div>
       </nav>
     </header>

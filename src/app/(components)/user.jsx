@@ -4,15 +4,15 @@ import { TfiAngleDown } from "react-icons/tfi";
 
 const User = () => {
   return (
-    <div className='flex border py-1 rounded-full space-x-3 cursor-pointer items-center px-2'>
-      <div className='w-10 h-10'>
-        <img src='/images/profile.png' className='rounded-full w-10 h-10'/>
+    <div className='flex border py-0.5 rounded-full space-x-3 cursor-pointer items-center px-2'>
+      <div className='w-10 h-10 flex items-center'>
+        <img src='/images/profile.png' className='rounded-full w-9 h-9'/>
       </div>
-      <div className=''>
+      <div className='hidden sm:block'>
         <p className='text-md'>Justin Bergson</p>
         <p className='text-sm text-[#787486]'>Justin@gmail.com</p>
       </div>
-      <TfiAngleDown size={16}/>
+      <TfiAngleDown size={14}/>
     </div>
   )
 }
