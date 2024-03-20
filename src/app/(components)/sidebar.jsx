@@ -1,12 +1,14 @@
 "use client"
 
 import React from 'react'
+import { useTheme } from "next-themes"
 
 const SideBar = ({ className }) => {
-  const [ theme, setTheme ] = React.useState('light')
+  // const [ theme, setTheme ] = React.useState('light')
+  const { theme, setTheme } = useTheme()
   console.log(theme)
   return (
-    <div className={`w-16 flex-col justify-between h-[95vh] bg-[#F7F8FA] py-2 sticky top-0 left-0 ${ className }`}>
+    <div className={`w-16 flex-col justify-between h-screen bg-[#F7F8FA] dark:bg-accent py-2 sticky top-0 left-0 ${ className }`}>
       <div className='justify-items-center flex flex-col items-center'>
         <div className="py-3">
           <img src='images/Vector.png' className='w-7 cursor-pointer'/>

@@ -3,10 +3,11 @@ import Searchbar from './searchbar'
 import Calendar from './calendar'
 import { HiOutlineBell } from "react-icons/hi2";
 import User from './user';
+import { inter } from '../fonts';
 
 const Header = () => {
   return (
-    <header className="w-full flex items-center px-1 bg-[#FAFAFA] sticky top-0 z-[50]">
+    <header className={`w-full flex items-center px-1 bg-[#FAFAFA] dark:bg-accent sticky top-0 z-[50] ${inter.className}`}>
       <nav className="flex items-center justify-between mx-auto py-4 max-w-[97%] w-full">
         <div className="">
           <h1 className="text-xl font-semibold">Dashboard</h1>

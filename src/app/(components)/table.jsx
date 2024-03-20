@@ -29,7 +29,7 @@ const Table1 = () => {
   ]
   console.log(hide)
   return (
-    <div className=''>
+    <div className='flex-grow'>
       <div className="flex items-center justify-between px-2">
         <h2 className="font-semibold text-md">Last Orders</h2>
         <button 
@@ -50,43 +50,20 @@ const Table1 = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-            {
-              hide ? (
-                <>
-                  {
-                    orders && orders.map(item=>(
-                      <TableRow key={item.id}>
-                        <TableCell className="font-medium">{item.name}</TableCell>
-                        <TableCell className=" ">{item.date}</TableCell>
-                        <TableCell className=" ">{item.amount}</TableCell>
-                        <TableCell className={` ${ item.status === "Paid" ? "text-[#34CAA5]" : "text-[#ED544E]" }`}>{item.status}</TableCell>
-                        <TableCell className="flex items-center cursor-pointer">
-                          <DocumentDownload />
-                          <span className='ml-2'>View</span>
-                        </TableCell>
-                      </TableRow>
-                    ))
-                  }
-                </>
-              ) : (
-                <>
-                  {
-                    orders && orders.slice(0, 5).map(item=>(
-                      <TableRow key={item.id}>
-                        <TableCell className="font-medium">{item.name}</TableCell>
-                        <TableCell className=" ">{item.date}</TableCell>
-                        <TableCell className=" ">${item.amount}</TableCell>
-                        <TableCell className={` ${ item.status === "Paid" ? "text-[#34CAA5]" : "text-[#ED544E]" }`}>{item.status}</TableCell>
-                        <TableCell className="flex items-center cursor-pointer">
-                          <DocumentDownload />
-                          <span className='ml-2'>View</span>
-                        </TableCell>
-                      </TableRow>
-                    ))
-                  }
-                </>
-              )
-            }
+          {
+            orders && orders.slice(0, hide ? orders.length : 5).map(item=>(
+              <TableRow key={item.id}>
+                <TableCell className="font-medium">{item.name}</TableCell>
+                <TableCell className=" ">{item.date}</TableCell>
+                <TableCell className=" ">${item.amount}</TableCell>
+                <TableCell className={` ${ item.status === "Paid" ? "text-[#34CAA5]" : "text-[#ED544E]" }`}>{item.status}</TableCell>
+                <TableCell className="flex items-center cursor-pointer">
+                  <DocumentDownload />
+                  <span className='ml-2'>View</span>
+                </TableCell>
+              </TableRow>
+            ))
+          }
         </TableBody>
       </Table>
     </div>

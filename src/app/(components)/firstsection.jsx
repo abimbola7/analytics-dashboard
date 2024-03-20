@@ -10,7 +10,7 @@ const FirstSection = () => {
       <div className="bg-white border rounded-xl xl:col-span-2">
         <Chartss />
       </div>
-      <div className="grid grid-cols-2 gap-4 rounded-xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 rounded-xl">
         <Container 
         icon={<Box/>} 
         amount={350}

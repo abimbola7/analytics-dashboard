@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="flex flex-row w-full min-h-screen">
       <SideBar className={"hidden md:flex"}/>
-      <div className="w-full bg-[#f9f9f9]">
+      <div className="w-full bg-[#f9f9f9] bg-accent">
         <Header />
         <main className="p-4">
           <FirstSection />

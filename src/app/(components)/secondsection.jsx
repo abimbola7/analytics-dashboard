@@ -1,14 +1,15 @@
+"use client"
 import React from 'react'
 import Table1 from './table'
 import Platform from './platform'
 
 const SecondSection = () => {
   return (
-    <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 mt-4'>
-      <div className="xl:col-span-2 rounded-xl bg-white p-3">
+    <div className='flex flex-col sm:flex-row gap-5 mt-4'>
+      <div className="rounded-xl bg-white p-3 flex flex-col h-fit w-full sm:w-1/2 xl:w-[67%] border">
         <Table1 />
       </div>
-      <div className="border p-3 rounded-xl">
+      <div className="p-3 rounded-xl bg-white h-fit w-full sm:w-1/2 xl:w-[33%] border">
         <Platform />
       </div>
     </div>
