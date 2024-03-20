@@ -44,7 +44,7 @@ const Platform = () => {
               item.progress >= 20 ? "bg-[#FFB74A]" : 
               "bg-[#FF4A55]"
             }`}/>
-            <div className="text-[#525252] tracking-wide flex justify-between items-center">
+            <div className="text-[#525252] dark:text-[#f2f2f2] tracking-wide flex justify-between items-center">
               <p className="">${item.price.toLocaleString()}</p>
               <p>+{item.rate}%</p>
             </div>

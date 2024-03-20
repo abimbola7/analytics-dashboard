@@ -6,7 +6,7 @@ import { CiSearch } from "react-icons/ci";
 const Searchbar = () => {
   const [ search, setSearch ] = React.useState('')
   return (
-    <form className='relative p-2 border rounded-full shadow text-gray-600 bg-white bg-accent'>
+    <form className='relative p-2 border rounded-full shadow text-gray-600 bg-white dark:bg-accent'>
       <div className="absolute">
         <CiSearch 
         size={20}

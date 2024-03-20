@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={Jarkata.className}>
+      <body className={`${Jarkata.className} transition-colors duration-400`}>
         <ThemeProvider
         attribute="class"
         defaultTheme="system"

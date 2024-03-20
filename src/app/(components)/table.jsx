@@ -29,8 +29,8 @@ const Table1 = () => {
   ]
   console.log(hide)
   return (
-    <div className='flex-grow'>
-      <div className="flex items-center justify-between px-2">
+    <div className='flex-grow transition-transform duration-200'>
+      <div className="flex items-center justify-between px-2 transition-transform duration-200">
         <h2 className="font-semibold text-md">Last Orders</h2>
         <button 
         className='px-2 py-1 text-[#34CAA5] focus:outline-none'

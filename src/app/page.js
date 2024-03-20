@@ -6,7 +6,7 @@ import SecondSection from "./(components)/secondsection";
 
 export default function Home() {
   return (
-    <div className="flex flex-row w-full min-h-screen">
+    <div className="flex flex-row w-full min-h-screen transition-all duration-500">
       <SideBar className={"hidden md:flex"}/>
       <div className="w-full bg-[#f9f9f9] bg-accent">
         <Header />

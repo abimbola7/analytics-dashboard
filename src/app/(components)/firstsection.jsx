@@ -7,7 +7,7 @@ import Box from "../../../public/icons/box-tick.svg"
 const FirstSection = () => {
   return (
     <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5'>
-      <div className="bg-white border rounded-xl xl:col-span-2">
+      <div className="bg-white dark:bg-accent border dark:border-gray-700 rounded-xl xl:col-span-2">
         <Chartss />
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 rounded-xl">

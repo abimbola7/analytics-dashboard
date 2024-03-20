@@ -7,7 +7,7 @@ import TrendDown from "../../../public/icons/trending-down.svg"
 
 const Container = ({ amount, trendIcon, title, icon, trendStatus, percentage }) => {
   return (
-    <div className="p-3 bg-white border rounded-xl space-y-3">
+    <div className="p-3 bg-white dark:bg-accent border rounded-xl space-y-3 dark:border-gray-700">
       <div className="flex items-center justify-between gap-x-4">
         <div className='border p-2 rounded-full'>
           { icon }
@@ -27,7 +27,7 @@ const Container = ({ amount, trendIcon, title, icon, trendStatus, percentage }) 
           }
           <span className={`text-sm  ${ trendStatus === "gain" ? 'text-[#34CAA5]' : 'text-[#ED544E]' } font-medium`}>{percentage}%</span>
         </span>
-        <span className='ml-2 text-[12.2px]'>
+        <span className='ml-2 text-[11.5px]'>
           vs. previous month
         </span>
       </div>
