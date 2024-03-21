@@ -4,7 +4,7 @@ import { TfiAngleDown } from "react-icons/tfi";
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
-  DropdownMenuCheckboxItem,
+  DropdownMenuItem,
   DropdownMenuContent,
   DropdownMenuLabel,
   DropdownMenuSeparator,
@@ -15,8 +15,8 @@ const User = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline">
-          <div className='flex border py-0.5 rounded-full space-x-3 cursor-pointer items-center px-2'>
+        <Button variant="custom" size="dropdown">
+          <div className='flex border dark:border-gray-700 py-0.5 rounded-full space-x-3 cursor-pointer items-center px-2 ring-0 focus:ring-0'>
             <div className='w-10 h-10 flex items-center'>
               <img src='/images/profile.png' className='rounded-full w-9 h-9'/>
             </div>
@@ -28,28 +28,29 @@ const User = () => {
           </div>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56">
-        <DropdownMenuLabel>Appearance</DropdownMenuLabel>
+      <DropdownMenuContent className="w-56 bg-[#fafafa] dark:bg-accent">
+        <DropdownMenuLabel>Hello Justin</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuCheckboxItem
+        <DropdownMenuItem
           // checked={showStatusBar}
           // onCheckedChange={setShowStatusBar}
         >
-          Status Bar
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
+          My Profile
+        </DropdownMenuItem>
+        <DropdownMenuItem
           // checked={showActivityBar}
           // onCheckedChange={setShowActivityBar}
           // disabled
         >
-          Activity Bar
-        </DropdownMenuCheckboxItem>
-        <DropdownMenuCheckboxItem
+          Account Settings
+        </DropdownMenuItem>
+        <DropdownMenuItem
+        className="text-red-500"
           // checked={showPanel}
           // onCheckedChange={setShowPanel}
         >
-          Panel
-        </DropdownMenuCheckboxItem>
+          Log out
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )

@@ -10,12 +10,12 @@ import { Hamburger } from './hamburger';
 
 const Header = () => {
   return (
-    <header className={`w-full flex items-center px-1 bg-[#FAFAFA] dark:bg-accent sticky top-0 z-[50] ${inter.className}`}>
+    <header className={`w-full flex items-center px-1 bg-[#FAFAFA] dark:bg-accent sticky top-0 z-[50] ${inter.className} overflow-hidden`}>
       <nav className="flex items-center justify-between mx-auto py-4 max-w-[97%] w-full">
         <div className="">
           <h1 className="text-xl font-semibold">Dashboard</h1>
         </div>
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2 sm:space-x-4">
           <Searchbar className="hidden lg:block"/>
           <div className="lg:hidden p-1 border rounded-full cursor-pointer">
             <CiSearch size={20}/>
