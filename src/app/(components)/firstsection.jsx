@@ -3,6 +3,9 @@ import React from 'react'
 import Chartss from './chart'
 import Container from './container'
 import Box from "../../../public/icons/box-tick.svg"
+import Rotate from "../../../public/icons/3d-rotate.svg"
+import Shopping from "../../../public/icons/shopping-cart.svg"
+import Coin from "../../../public/icons/coin.svg"
 
 const FirstSection = () => {
   return (
@@ -20,7 +23,7 @@ const FirstSection = () => {
         key={1}
         />
         <Container 
-        icon={<Box/>} 
+        icon={<Rotate/>} 
         amount={270}
         trendStatus={"loss"}
         percentage={23.5}
@@ -28,7 +31,7 @@ const FirstSection = () => {
         key={1}
         />
         <Container 
-        icon={<Box/>} 
+        icon={<Shopping/>} 
         amount={350000}
         trendStatus={"loss"}
         percentage={23.5}
@@ -36,7 +39,7 @@ const FirstSection = () => {
         key={1}
         />
         <Container 
-        icon={<Box/>} 
+        icon={<Coin />} 
         amount={350}
         trendStatus={"gain"}
         percentage={23.5}

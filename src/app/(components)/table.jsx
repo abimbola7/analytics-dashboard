@@ -55,7 +55,7 @@ const Table1 = () => {
               <TableRow key={item.id}>
                 <TableCell className="font-medium">{item.name}</TableCell>
                 <TableCell className=" ">{item.date}</TableCell>
-                <TableCell className=" ">${item.amount}</TableCell>
+                <TableCell className=" ">${item.amount.toLocaleString()}</TableCell>
                 <TableCell className={` ${ item.status === "Paid" ? "text-[#34CAA5]" : "text-[#ED544E]" }`}>{item.status}</TableCell>
                 <TableCell className="flex items-center cursor-pointer">
                   <DocumentDownload />

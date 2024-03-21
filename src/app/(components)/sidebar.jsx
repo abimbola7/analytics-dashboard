@@ -34,7 +34,7 @@ const SideBar = ({ className }) => {
 
         <div className="py-2 row-span-2 border rounded-full flex flex-col w-[55%] h-[4.7rem] relative items-center justify-between">
           <div 
-          className={`absolute top-1 left-1 w-6 h-6 rounded-full flex items-center justify-center bg-[#34CAA5] dark:bg-[#4d8f7e] z-[1] duration-200 transition-transform  ${theme === 'dark' ? 'translate-y-[2.5rem]' : 'translate-y-[0%]'}`}
+          className={`absolute top-1 left-1 w-6 h-6 rounded-full flex items-center justify-center bg-[#34CAA5] dark:bg-[#4d8f7e] z-[1] duration-200 transition-transform  ${theme === 'light' ? 'translate-y-[0%]' : 'translate-y-[2.5rem]'}`}
           />
           <div className='relative z-[2]'>
             <img src="images/brightness 1.png" onClick={()=>setTheme("light")} className='w-4 cursor-pointer'/>

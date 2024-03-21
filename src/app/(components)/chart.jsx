@@ -1,11 +1,21 @@
 "use client"
 import React from 'react'
-// import ReactApexChart from "react-apexcharts"
+import "./chart.css"
 import dynamic from "next/dynamic"
+import { theme } from "next-themes"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 const Chartss = () => {
+
+  console.log(theme)
   const [ date, setDate ] = React.useState([
     "Jan",
     "Feb",
@@ -25,19 +35,25 @@ const Chartss = () => {
   ])
   const options  = {
     series: [{
+      name : "Sales Trend",
       data: data
     }],
     options: {
+      tooltip : {
+        enabled : true,
+      },
       yaxis : {
         stepSize : 10000
       },
       grid: {
+        borderColor : "#808080",
         show: true,
         strokeDashArray: 5,
         yaxis: {
           lines: {
             show: true,
           },
+
         },
         xaxis: {
           lines: {
@@ -50,7 +66,8 @@ const Chartss = () => {
         type: 'bar',
         toolbar : {
           show : false
-        }
+        },
+        foreColor : '#808080'
         },
         // colors: colors,
         plotOptions: {
@@ -65,7 +82,7 @@ const Chartss = () => {
           enabled: false
         },
         legend: {
-          show: false
+          show: false,
         },
         xaxis: {
           categories: date,
@@ -86,13 +103,19 @@ const Chartss = () => {
           <span>
             Sort by : 
           </span>
-          <div className="">
-
-          </div>
+          <Select className="">
+            <SelectTrigger className="w-[100px] rounded-3xl">
+              <SelectValue placeholder="Yearly" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="weekly">Weekly</SelectItem>
+              <SelectItem value="monthly">Monthly</SelectItem>
+              <SelectItem value="yearly">Yearly</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
       </div>
           <ReactApexChart 
-          className=""
           options={
             {
               ...options.options,
