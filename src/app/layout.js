@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
       <body className={`${Jarkata.className} transition-colors duration-400`}>
         <ThemeProvider
         attribute="class"
-        defaultTheme="system"
+        defaultTheme="dark"
         enableSystem
         >
           {children}
