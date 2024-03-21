@@ -97,7 +97,7 @@ const Chartss = () => {
   }
   return (
     <div className='sm:p-4'>
-      <div className="flex items-center justify-between text-sm p-4">
+      <div className="flex items-start sm:items-center justify-between text-sm p-4 flex-col sm:flex-row space-y-3 md:space-y-0">
         <h1 className='font-semibold'>Sales Trends</h1>
         <div className='flex items-center space-x-3'>
           <span>
