@@ -1,6 +1,9 @@
 "use client"
 import React from 'react'
-import ReactApexChart from "react-apexcharts"
+// import ReactApexChart from "react-apexcharts"
+import dynamic from "next/dynamic"
+
+const ReactApexChart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
 const Chartss = () => {
   const [ date, setDate ] = React.useState([
@@ -88,39 +91,41 @@ const Chartss = () => {
           </div>
         </div>
       </div>
-      <ReactApexChart 
-      className=""
-      options={
-        {
-          ...options.options,
-          fill: {
-            type: "gradient",
-            gradient: {
-              type: "vertical",
-              shadeIntensity: 1,
-              opacityFrom: 0.2,
-              opacityTo: 1,
-              colorStops: [
-                [
-                  {
-                    offset: 0,
-                    color: "#34CAA5",
-                    opacity: 1,
-                  },
-                  {
-                    offset: 100,
-                    color: "#ddf7f0",
-                    opacity: 1,
-                  },
-                ],
-              ],
-            },
-          },
-        }
-      } 
-      series={options.series} 
-      type="bar" height={270}
-      />
+          <ReactApexChart 
+          className=""
+          options={
+            {
+              ...options.options,
+              fill: {
+                type: "gradient",
+                gradient: {
+                  type: "vertical",
+                  shadeIntensity: 1,
+                  opacityFrom: 0.2,
+                  opacityTo: 1,
+                  colorStops: [
+                    [
+                      {
+                        offset: 0,
+                        color: "#34CAA5",
+                        opacity: 1,
+                      },
+                      {
+                        offset: 100,
+                        color: "#ddf7f0",
+                        opacity: 1,
+                      },
+                    ],
+                  ],
+                },
+              },
+            }
+          } 
+          series={options.series} 
+          type="bar" 
+          width={"100%"}
+          height={270}
+          />
     </div>
   );
 }

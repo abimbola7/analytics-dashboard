@@ -27,7 +27,7 @@ const User = () => {
           </div>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56 bg-[#fafafa] dark:bg-accent">
+      <DropdownMenuContent className="w-56 bg-[#fafafa] dark:bg-accent max-w-2xl">
         <DropdownMenuLabel>Hello Justin</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem
