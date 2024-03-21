@@ -11,7 +11,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 const User = () => {
-
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -32,22 +31,15 @@ const User = () => {
         <DropdownMenuLabel>Hello Justin</DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem
-          // checked={showStatusBar}
-          // onCheckedChange={setShowStatusBar}
         >
           My Profile
         </DropdownMenuItem>
         <DropdownMenuItem
-          // checked={showActivityBar}
-          // onCheckedChange={setShowActivityBar}
-          // disabled
         >
           Account Settings
         </DropdownMenuItem>
         <DropdownMenuItem
         className="text-red-500"
-          // checked={showPanel}
-          // onCheckedChange={setShowPanel}
         >
           Log out
         </DropdownMenuItem>
